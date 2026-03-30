@@ -1,0 +1,360 @@
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Портфолио AI-навыков | Безносова Елена Александровна</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --beige: #F5F5DC;
+            --gold: #D4AF37;
+            --coffee-mustard: #6E5B3E; /* Темно-кофейно-горчичный */
+            --white: #FFFFFF;
+            --dark-coffee: #554833;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--beige);
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header with gradient and transparency effect */
+        header {
+            background: linear-gradient(135deg, var(--coffee-mustard), var(--dark-coffee));
+            color: var(--white);
+            padding: 60px 0 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 40px;
+        }
+        
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjAzKSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNwYXR0ZXJuKSIvPjwvc3ZnPg==');
+            opacity: 0.6;
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+            background: linear-gradient(to right, var(--gold), var(--white));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .subtitle {
+            font-size: 1.5rem;
+            color: var(--gold);
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+        
+        .divider {
+            height: 2px;
+            background: linear-gradient(to right, transparent, var(--gold), transparent);
+            width: 60%;
+            margin: 30px auto;
+        }
+        
+        /* Skills cards section */
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--coffee-mustard);
+            font-size: 2.2rem;
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(to right, var(--coffee-mustard), var(--gold));
+        }
+        
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+        
+        .skill-card {
+            background: var(--white);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border-top: 4px solid var(--gold);
+        }
+        
+        .skill-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        
+        .skill-title {
+            font-size: 1.5rem;
+            color: var(--coffee-mustard);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .skill-title i {
+            margin-right: 10px;
+            color: var(--gold);
+        }
+        
+        .skill-list {
+            list-style-type: none;
+            margin-bottom: 20px;
+        }
+        
+        .skill-list li {
+            padding: 8px 0;
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        .skill-list li::before {
+            content: '•';
+            color: var(--gold);
+            font-size: 1.5rem;
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        
+        .case-example {
+            background: rgba(212, 175, 55, 0.1);
+            border-left: 3px solid var(--gold);
+            padding: 15px;
+            border-radius: 0 5px 5px 0;
+            margin-top: 15px;
+            font-style: italic;
+        }
+        
+        .case-example::before {
+            content: 'Пример:';
+            display: block;
+            font-weight: bold;
+            color: var(--coffee-mustard);
+            font-style: normal;
+            margin-bottom: 5px;
+        }
+        
+        /* Tools section */
+        .tools-section {
+            margin-bottom: 60px;
+        }
+        
+        .tools-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .tool-tag {
+            background: var(--coffee-mustard);
+            color: var(--white);
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+        }
+        
+        .tool-tag:hover {
+            background: var(--gold);
+            color: var(--coffee-mustard);
+            transform: scale(1.05);
+        }
+        
+        .tool-tag i {
+            margin-right: 8px;
+        }
+        
+        /* Responsive design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .skills-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .skill-card {
+                padding: 20px;
+            }
+            
+            .skill-title {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>ПОРТФОЛИО AI-навыков</h1>
+            <div class="subtitle">Безносова Елена Александровна</div>
+        </div>
+    </header>
+    
+    <div class="container">
+        <section class="skills-section">
+            <h2 class="section-title">Ключевые AI-навыки и практические кейсы</h2>
+            
+            <div class="skills-container">
+                <!-- Skill Card 1 -->
+                <div class="skill-card">
+                    <h3 class="skill-title"><i class="fas fa-brain"></i>Эффективная работа с нейросетями</h3>
+                    <ul class="skill-list">
+                        <li>Различаю ИИ, нейросети, ChatGPT, умею объяснять разницу простым языком.</li>
+                        <li>Экономлю время на поиске информации: чат-боты вместо Google.</li>
+                        <li>Применяю нейросети для личной эффективности: составление диет, подбор тренировок, обучение языкам.</li>
+                    </ul>
+                    <div class="case-example">
+                        Оптимизировала рутинные задачи в отделе закупок, автоматизировав подбор поставщиков с помощью ChatGPT.
+                    </div>
+                </div>
+                
+                <!-- Skill Card 2 -->
+                <div class="skill-card">
+                    <h3 class="skill-title"><i class="fas fa-keyboard"></i>Промт-инжиниринг</h3>
+                    <ul class="skill-list">
+                        <li>Владею всеми техниками: последовательные, ролевые, диалоговые промты, кастомизация под задачу.</li>
+                        <li>Использую фреймворки для генерации сложных бизнес-текстов и аналитики.</li>
+                    </ul>
+                    <div class="case-example">
+                        Разработала промты для генерации управленческих решений в сложных ситуациях — получил сокращение времени на анализ на 70%.
+                    </div>
+                </div>
+                
+                <!-- Skill Card 3 -->
+                <div class="skill-card">
+                    <h3 class="skill-title"><i class="fas fa-pen-fancy"></i>Работа с текстами и контентом</h3>
+                    <ul class="skill-list">
+                        <li>Автоматизация написания регламентов, писем, презентаций, аналитических записок.</li>
+                        <li>Использую нейросети для генерации контент-стратегий, статей, презентаций, КП.</li>
+                    </ul>
+                    <div class="case-example">
+                        С помощью ChatGPT и Midjourney создал более 30 презентаций и статей для отдела маркетинга.
+                    </div>
+                </div>
+                
+                <!-- Skill Card 4 -->
+                <div class="skill-card">
+                    <h3 class="skill-title"><i class="fas fa-chart-line"></i>Аналитика и финансы</h3>
+                    <ul class="skill-list">
+                        <li>Автоматизирую обработку выписок, подготовку финансовых моделей, анализ отчетности.</li>
+                        <li>Разработка дашбордов и методик финанализа с помощью AI.</li>
+                    </ul>
+                    <div class="case-example">
+                        Построила систему автоматического анализа договоров и выявления рисков — 90% кейсов закрываются без юриста.
+                    </div>
+                </div>
+                
+                <!-- Skill Card 5 -->
+                <div class="skill-card">
+                    <h3 class="skill-title"><i class="fas fa-robot"></i>Автоматизация процессов</h3>
+                    <ul class="skill-list">
+                        <li>Интеграция нейросетей с Google Таблицами, автоматизация расчётов, нормализация данных.</li>
+                        <li>Внедрение AI-ассистентов в бизнес-процессы (финансы, HR, продажи).</li>
+                    </ul>
+                    <div class="case-example">
+                        Написал скрипт для автосоздания KPI-дашбордов в Google Sheets с использованием GPT.
+                    </div>
+                </div>
+                
+                <!-- Skill Card 6 -->
+                <div class="skill-card">
+                    <h3 class="skill-title"><i class="fas fa-lightbulb"></i>Уникальные решения для бизнеса</h3>
+                    <ul class="skill-list">
+                        <li>Автоматизация согласования заявок через Telegram-ботов.</li>
+                        <li>Построение системы "цифрового ассистента" для руководителя.</li>
+                    </ul>
+                    <div class="case-example">
+                        Реализовал систему моментальных бонусов через Telegram-бота и Google Таблицы (case inside).
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <div class="divider"></div>
+        
+        <section class="tools-section">
+            <h2 class="section-title">Инструменты, которые использую</h2>
+            
+            <div class="tools-container">
+                <div class="tool-tag"><i class="fas fa-comment-dots"></i>ChatGPT</div>
+                <div class="tool-tag"><i class="fas fa-robot"></i>Gemini</div>
+                <div class="tool-tag"><i class="fas fa-code"></i>Copilot</div>
+                <div class="tool-tag"><i class="fas fa-image"></i>Midjourney</div>
+                <div class="tool-tag"><i class="fas fa-magic"></i>Krea</div>
+                <div class="tool-tag"><i class="fas fa-microphone"></i>ElevenLabs</div>
+                <div class="tool-tag"><i class="fas fa-table"></i>Google Sheets + GPT</div>
+                <div class="tool-tag"><i class="fas fa-cogs"></i>Make</div>
+                <div class="tool-tag"><i class="fas fa-bolt"></i>Zapier</div>
+                <div class="tool-tag"><i class="fab fa-telegram"></i>Telegram-боты</div>
+                <div class="tool-tag"><i class="fas fa-scroll"></i>Custom scripts</div>
+                <div class="tool-tag"><i class="fas fa-file-alt"></i>Генерация документов</div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
